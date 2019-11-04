@@ -142,7 +142,16 @@ intellij_unit_test_suite(
 
 intellij_integration_test_suite(
     name = "integration_tests",
-    srcs = glob(["tests/integrationtests/**/*.java"]),
+    srcs = [
+        "tests/integrationtests/com/google/idea/blaze/ijwb/lang/projectview/ProjectViewCompletionTest.java",
+    ] + select_for_ide(
+        intellij = [
+            "tests/integrationtests/com/google/idea/blaze/ijwb/prefetch/IntellijCommunityBazelPrefetchFileSourceTest.java",
+        ],
+        intellij_ue = [
+            "tests/integrationtests/com/google/idea/blaze/ijwb/prefetch/IntellijUltimateBazelPrefetchFileSourceTest.java",
+        ],
+    ),
     required_plugins = "com.google.idea.bazel.ijwb",
     test_package_root = "com.google.idea.blaze.ijwb",
     runtime_deps = [

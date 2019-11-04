@@ -23,9 +23,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Test for file extensions prefetched in the IntelliJ Bazel plugin. */
+/** Test for file extensions prefetched in the IntelliJ Community Edition Bazel plugin. */
 @RunWith(JUnit4.class)
-public class IntelliJBazelPrefetchFileSourceTest extends BlazeIntegrationTestCase {
+public class IntellijCommunityBazelPrefetchFileSourceTest extends BlazeIntegrationTestCase {
 
   @Test
   public void testPrefetchedExtensions() {
